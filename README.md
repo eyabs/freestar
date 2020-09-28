@@ -6,13 +6,13 @@
 
 This assessment was completed using an Anaconda distribution of Python 3.6.10 and SQLite version 3.13.0.
 
-The solutions to Task 1 and Task 2 are provided in the file NeighboringNodes.py. Unit tests are provided in the file Neighboring NodesTests.py
+The solutions to Task 1 and Task 2 are provided in the file `NeighboringNodes.py`. Unit tests are provided in the file `NeighboringNodesTests.py`
 
-The solution to Task 3 is provided in the file q3.sql. Sample data may be loaded with the file create_q3.sql.
+The solution to Task 3 is provided in the file `q3.sql`. Sample data may be loaded with the file `create_q3.sql`.
 
 ### Task 1: Build the Grid
 
-This question required a class containing a method which would take in the parameters `size: int` and `debug: bool` to produce a grid of `size x size` instantiated with nodes containing their index, x coordinate, and y-coordinate.
+This question required a class containing a method which would take in the parameters `size: int` and `debug: bool` to produce a grid of `size x size` instantiated with nodes containing their index, x coordinate, and y-coordinate. If `debug` is set to true, the `build_grid()` method will print the grid of nodes.
 
 This requirement was satisfied with the `build_grid` method of the `NeighboringNodes` class.
 
