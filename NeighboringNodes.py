@@ -78,14 +78,6 @@ class NeighboringNodes(object):
         
         min_y = min(max(0, min_y), self.size-1)
         max_y = min(max(0, max_y), self.size-1)
-        
-        print("SQUARE\n" \
-         f" center_x, center_y, m: {center_x}, {center_y}, {m}\n" \
-         f"min_x {min_x}\n" \
-         f"max_x {max_x}\n" \
-         f"min_y {min_y}\n" \
-         f"max_y {max_y}\n"
-         )
 
         coords = [(x, y) for y in range(min_y, max_y+1) for x in range(min_x, max_x+1)]
 
@@ -107,25 +99,14 @@ class NeighboringNodes(object):
         min_y = min(max(0, min_y), self.size-1)
         max_y = min(max(0, max_y), self.size-1)
 
-        print("CROSS\n" \
-         f" center_x, center_y, m: {center_x}, {center_y}, {m}\n" \
-         f"min_x {min_x}\n" \
-         f"max_x {max_x}\n" \
-         f"min_y {min_y}\n" \
-         f"max_y {max_y}\n"
-         )
-
         coords = []
         for y in range(min_y, max_y + 1):
             if y == center_y:
                 for x in range(min_x, max_x+1):
                     coords.append((x, y))
-                    print((x,y), end='')
             else:
                 coords.append((center_x, y))
-                print((center_x,y), end='')
-            print()
-        print()
+        
         return coords
         
     def _find_neighbors_diamond(self, center_x, center_y, m):
@@ -136,13 +117,6 @@ class NeighboringNodes(object):
         # Ensure we don't exceed the grid's boundaries.
         min_y = min(max(0, min_y), self.size-1)
         max_y = min(max(0, max_y), self.size-1)
-
-
-        print("DIAMOND" \
-         f" center_x, center_y, m: {center_x}, {center_y}, {m}" \
-         f"min_y {min_y}" \
-         f"max_y {max_y}"
-         )
         
         coords = []
         for y in range(min_y, max_y + 1):
@@ -150,8 +124,6 @@ class NeighboringNodes(object):
             for x in range(center_x - offset, center_x + offset + 1):
                 if x >= 0 and x < self.size:
                     coords.append((x, y))
-                    print((x,y), end='')
-            print()
-        print()
+        
         return coords
         

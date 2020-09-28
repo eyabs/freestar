@@ -38,14 +38,18 @@ class TestNeighboringNodes(unittest.TestCase):
     def test_find_neighbors_args_error(self):
         size = 3
         nn = NeighboringNodes(size)
+
+        # Correct args throw no error.
         nn.find_neighboring_nodes(x=1, y=1, m=1, type='SQUARE')
         
         with self.assertRaises(Exception) as e:
+            # Passing x, y, and i throws and invalid arguments exception.
             nn.find_neighboring_nodes(x=1, y=1, i=1, m=1, type='SQUARE')
             print(f"e: {e.exception}")
         self.assertTrue('Invalid Arguments' in str(e.exception))
         
         with self.assertRaises(Exception) as e:
+            # Passing an invalid typo throws and invalid arguments exception.
             nn.find_neighboring_nodes(x=1, y=1, m=1, type='INVALID_TYPE')
             print(f"e: {e.exception}")
         self.assertTrue('Invalid Arguments' in str(e.exception))
@@ -171,6 +175,7 @@ class TestNeighboringNodes(unittest.TestCase):
         neighbors = nn.find_neighboring_nodes(x=1, y=-1, m=1, type='SQUARE')
         neighbors = set(neighbors)
         self.assertEqual(expected, neighbors)
+        
         # Below and to the right of the grid
         expected = set([
             (1, 1), (2, 1),
