@@ -1,5 +1,3 @@
-from itertools import product
-
 class NeighboringNodes(object):
     def __init__(self, size, debug=False):
         self.size = size
