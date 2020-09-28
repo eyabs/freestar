@@ -69,7 +69,7 @@ nn = NeighboringNodes(size)
 neighbors = nn.find_neighboring_nodes(x=3, y=3, m=2, type='SQUARE')
 
 '''
-Output will resemble:
+neighbors will resemble:
 [
     (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), 
     (1, 2), (2, 2), (3, 2), (4, 2), (5, 2), 
@@ -78,6 +78,41 @@ Output will resemble:
     (1, 5), (2, 5), (3, 5), (4, 5), (5, 5)
 ]
 '''
+
+size = 7
+nn = NeighboringNodes(size)
+neighbors = nn.find_neighboring_nodes(x=3, y=3, m=2, type='CROSS')
+
+'''
+neighbors will resemble:
+[
+                    (3, 1),
+                    (3, 2),
+    (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), 
+                    (3, 4), 
+                    (3, 5)
+]
+
+'''
+
+size = 9
+nn = NeighboringNodes(size)
+neighbors = nn.find_neighboring_nodes(x=3, y=5, m=3, type='DIAMOND')
+
+'''
+neighbors will resemble:
+[
+                            (3, 2),
+                    (2, 3), (3, 3), (4, 3),
+            (1, 4), (2, 4), (3, 4), (4, 4), (5, 4),
+    (0, 5), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (6, 5),
+            (1, 6), (2, 6), (3, 6), (4, 6), (5, 6),
+                    (2, 7), (3, 7), (4, 7),
+                            (3, 8)
+]
+
+'''
+
 ```
 
 ### Task 3: SQL
